@@ -1,0 +1,42 @@
+[
+  {
+    "repository": "obra/superpowers",
+    "reviewed_commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+    "license": "MIT",
+    "license_url": "https://github.com/obra/superpowers/blob/5bf4e78011075bcfc0dc295f0724994cd123ee71/LICENSE",
+    "retained_license": "LICENSES/obra--superpowers.txt",
+    "license_sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+    "checked_on": "2026-09-25",
+    "note": "License review snapshot; not a claim that this was the original local installation revision."
+  },
+  {
+    "repository": "provencher/codex-skills",
+    "reviewed_commit": "8aa6c42b73781c905c55f8a1253a18127079ac21",
+    "license": "MIT",
+    "license_url": "https://github.com/provencher/codex-skills/blob/8aa6c42b73781c905c55f8a1253a18127079ac21/LICENSE",
+    "retained_license": "LICENSES/provencher--codex-skills.txt",
+    "license_sha256": "c46a5f93c655d8a890391242058d050cbc6ff575d751f27477f22d1f8d53fba4",
+    "checked_on": "2026-09-25",
+    "note": "License review snapshot; not a claim that this was the original local installation revision."
+  },
+  {
+    "repository": "msitarzewski/agency-agents",
+    "reviewed_commit": "053ddbbf392a1688fc7043d81529f47ef2cf86c8",
+    "license": "MIT",
+    "license_url": "https://github.com/msitarzewski/agency-agents/blob/053ddbbf392a1688fc7043d81529f47ef2cf86c8/LICENSE",
+    "retained_license": "LICENSES/msitarzewski--agency-agents.txt",
+    "license_sha256": "9a45258434d5cedf0af73c9ad4771373701225038d246c49219026c33677f66f",
+    "checked_on": "2026-09-25",
+    "note": "License review snapshot; not a claim that this was the original local installation revision."
+  },
+  {
+    "repository": "TorpedoD/claude-council",
+    "reviewed_commit": "f963fd62a4234735b194a916c86539d92bfb6389",
+    "license": "MIT",
+    "license_url": "https://github.com/TorpedoD/claude-council/blob/f963fd62a4234735b194a916c86539d92bfb6389/LICENSE",
+    "retained_license": "LICENSES/TorpedoD--claude-council.txt",
+    "license_sha256": "0c12a26b1393e798b58b486ebf7a63721ac7c867e2ce70d9ab59136d53ebd7a0",
+    "checked_on": "2026-09-25",
+    "note": "License review snapshot; not a claim that this was the original local installation revision."
+  }
+]
