@@ -1,6 +1,6 @@
 # Model routing
 
-AGENTS.md rule 15 is the common authority. This reference specifies dispatch mechanics, not new permissions.
+The applicable AGENTS.md section `멀티에이전트 운영 및 모델 정책` is the common authority. This reference specifies dispatch mechanics, not new permissions.
 
 - One top-level coordinator: `gpt-6-astra`, reasoning `high`.
 - All subordinate implementers, researchers, reviewers, council advisors, and authorized child coordinators: explicitly select `gpt-6-sol` or `gpt-6-luna`.

@@ -13,7 +13,9 @@ description: Use when implementation is complete, all tests pass, and you need t
 
 ## Step 1: Verify Tests
 
-Run the project's full test suite (`npm test` / `cargo test` / `pytest` / `go test ./...`).
+Establish a passing full-suite result for the tree to be integrated using the project's command (`npm test` / `cargo test` / `pytest` / `go test ./...`). Apply `verification-before-completion`: reuse an observed successful run when the tested contents, configuration, environment, and relevant time window still match. A commit-only SHA change does not invalidate evidence if the tested contents are proven unchanged. Do not rerun solely because the evidence came from an earlier message.
+
+If there is no valid full-suite result, run the suite. After meaningful changes, failures, stale evidence, or uncertain equivalence, rerun the affected checks and re-establish full-suite coverage; run the full suite when the affected scope cannot be determined. Step 5 still requires tests on the merged result. Report the reused evidence and any unverified limits; blocked required verification is not a passing result.
 
 **If tests fail**, report the failures and stop — the menu comes after a green suite:
 
@@ -212,7 +214,7 @@ A successful merge or PR does not establish workspace ownership. Preserved works
 
 | Excuse | Reality |
 |--------|---------|
-| "Tests passed earlier this session" | Run the suite on the tree you are about to integrate. A green run only proves the tree it ran on. |
+| "Tests passed earlier this session" | Reuse only observed evidence that still matches the current tested contents, configuration, environment, and relevant time window. Changed or uncertain state needs new checks; the merged result must be tested. |
 | "They obviously want it merged" | Do not infer integration approval. Reuse an explicit selection for unchanged targets and scope; otherwise present the menu. |
 | "They seem done with this feature — I'll offer to discard it" | The menu is complete as written. Discard happens only when your human partner asks for it in so many words. |
 | "'Yeah, get rid of it' counts as confirmation" | Only the typed word `discard` authorizes deletion. |

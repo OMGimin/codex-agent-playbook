@@ -5,7 +5,7 @@ description: Pressure-test consequential decisions with multiple independent per
 
 # Decision Council
 
-Follow AGENTS.md rule 15 and [model routing](../work-orchestrator/references/model-routing.md) before dispatch or reuse. Every subordinate must explicitly use `gpt-6-sol` or `gpt-6-luna`; never inherit Astra or promote a reviewer/advisor to Astra because the task is difficult.
+Follow the applicable AGENTS.md section `멀티에이전트 운영 및 모델 정책` and [model routing](../work-orchestrator/references/model-routing.md) before dispatch or reuse. Every subordinate must explicitly use `gpt-6-sol` or `gpt-6-luna`; never inherit Astra or promote a reviewer/advisor to Astra because the task is difficult.
 
 Frame the decision, current evidence, user constraints, alternatives, reversibility, and what remains uncertain. First resolve facts through authorized investigation when they could decide the issue. Do not convene a council merely because five roles are available.
 

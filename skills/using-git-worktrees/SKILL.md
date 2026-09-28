@@ -80,10 +80,11 @@ Follow this priority order. Explicit user preference always beats observed files
 **MUST verify directory is ignored before creating worktree:**
 
 ```bash
-git check-ignore -q .worktrees 2>/dev/null || git check-ignore -q worktrees 2>/dev/null
+# LOCATION is the actual selected directory, including a user-specified one.
+git check-ignore -q -- "${LOCATION%/}/"
 ```
 
-**If NOT ignored:** Add to .gitignore, commit the change, then proceed.
+**If NOT ignored:** Add the exact worktree directory to .gitignore and verify it is now ignored. Commit only this change under the applicable AGENTS.md `자동 커밋과 커밋 메시지` policy (logical scope, English title, detailed Korean body); preserve existing staged and unstaged user changes. This skill does not independently authorize a commit or override project-specific approval rules. If committing is prohibited or this change cannot be safely separated, pause this setup step and report the constraint rather than bypassing the ignore or consent safeguards. Do not push as part of setup.
 
 **Why critical:** Prevents accidentally committing worktree contents to repository.
 
@@ -91,10 +92,10 @@ git check-ignore -q .worktrees 2>/dev/null || git check-ignore -q worktrees 2>/d
 
 ```bash
 # Determine path based on chosen location
-path="$LOCATION/$BRANCH_NAME"
+WORKTREE_TARGET="$LOCATION/$BRANCH_NAME"
 
-git worktree add "$path" -b "$BRANCH_NAME"
-cd "$path"
+git worktree add "$WORKTREE_TARGET" -b "$BRANCH_NAME"
+cd "$WORKTREE_TARGET"
 ```
 
 **Creation failure:** If creation fails, report the constraint and investigate permitted recovery. Do not bypass a sandbox denial or silently switch to the current checkout when isolation is required. Continue independent read-only work. Use an in-place alternative only when already authorized for this target and scope and safe under the project constraints; otherwise ask before changing the isolation requirement. A permission failure is not consent to run setup, tests, or implementation in another checkout.
@@ -103,22 +104,27 @@ cd "$path"
 
 For a newly created or reused linked worktree, before setup record the resolved absolute worktree path, repository/common Git directory, branch or detached commit, creation tool and task, and applicable cleanup permission in the task record. Verify registration with `git worktree list --porcelain`. For an existing worktree, mark provenance unknown unless verified; reuse does not transfer cleanup authority. Record native host management separately from manual Git creation. A directory name alone never proves ownership.
 
-Auto-detect and run appropriate setup:
+Determine setup from the project's instructions, scripts, package-manager
+configuration, and lockfiles before running it. Reuse an already prepared
+environment when appropriate. A manifest's presence alone does not select
+a package manager or authorize changing the dependency setup.
 
-```bash
-# Node.js
-if [ -f package.json ]; then npm install; fi
+- Node.js: reconcile project guidance and `package.json`'s `packageManager`
+  with the lockfile, then use that manager and the project's install command
+  (for example, npm, pnpm, or yarn). Do not default to `npm install` merely
+  because `package.json` exists.
+- Python: inspect project guidance, `pyproject.toml` tool settings, lockfiles,
+  and environment setup to choose the existing manager and command (for
+  example, uv, Poetry, or pip in the project's environment). Do not infer
+  Poetry from `pyproject.toml` alone.
+- Rust/Go and other projects: use the documented toolchain, versions, and
+  setup command; `cargo build` or `go mod download` may fit when consistent
+  with those instructions.
 
-# Rust
-if [ -f Cargo.toml ]; then cargo build; fi
-
-# Python
-if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-if [ -f pyproject.toml ]; then poetry install; fi
-
-# Go
-if [ -f go.mod ]; then go mod download; fi
-```
+If the available evidence conflicts or cannot determine consequential setup
+requirements, resolve that uncertainty before installation; continue
+independent inspection. Preserve existing manifests and lockfiles rather
+than introducing another manager's files as incidental setup.
 
 ## Step 3: Verify Clean Baseline
 
@@ -153,10 +159,10 @@ Ready to implement <feature-name>
 | `worktrees/` exists | Use it (verify ignored) |
 | Both exist | Use `.worktrees/` |
 | Neither exists | Check instruction file, then default `.worktrees/` |
-| Directory not ignored | Add to .gitignore + commit |
+| Selected project-local directory not ignored | Check the actual selected path, add its exact ignore rule, verify it, and commit under AGENTS.md policy; preserve unrelated changes and approval safeguards |
 | Permission error on create | Preserve required isolation; investigate permitted recovery and continue independent read-only work |
 | Tests fail during baseline | Report failures + ask |
-| No package.json/Cargo.toml | Skip dependency install |
+| Setup command unclear | Inspect project instructions, package-manager configuration, and lockfiles; do not choose npm/Poetry from a manifest alone |
 
 ## Common Rationalizations
 
@@ -164,6 +170,7 @@ Ready to implement <feature-name>
 |--------|---------|
 | "I'm obviously not in a worktree — no need to check" | Run Step 0. Harness-created isolation and submodules both fool eyeballing; the detection commands settle it. |
 | "`git worktree add` is quicker than hunting for a native tool" | A native tool (e.g. `EnterWorktree`) owns placement, branching, and cleanup. Bypassing it is the #1 mistake — it creates phantom state your harness can't see or manage. |
-| "The worktree directory is surely ignored already" | Run `git check-ignore`. An unignored worktree directory commits the whole tree into the repo. |
+| "The worktree directory is surely ignored already" | Run `git check-ignore` on the actual selected project-local directory, including a user-specified location. Another ignored directory proves nothing about this one. |
+| "package.json means npm; pyproject.toml means Poetry" | Use the project's instructions, manager configuration, and lockfiles. A manifest alone does not establish its setup command. |
 | "Any directory name works" | Explicit instructions beat an existing project-local directory, which beats the `.worktrees/` default. |
 | "The workspace is fresh — baseline tests can wait" | A dirty baseline makes every later failure ambiguous. Run the tests now; proceeding past failures is your human partner's call. |
