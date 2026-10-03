@@ -27,7 +27,21 @@
     "retained_license": "LICENSES/msitarzewski--agency-agents.txt",
     "license_sha256": "9a45258434d5cedf0af73c9ad4771373701225038d246c49219026c33677f66f",
     "checked_on": "2026-09-25",
-    "note": "License review snapshot; not a claim that this was the original local installation revision."
+    "note": "License review snapshot; not a claim that this was the original local installation revision.",
+    "adaptation_review": {
+      "reviewed_commit": "d3f71c4bb8922d3eea7576237a870dd59b3cdd52",
+      "checked_on": "2026-10-04",
+      "license_sha256_lf": "9a45258434d5cedf0af73c9ad4771373701225038d246c49219026c33677f66f",
+      "source_files": [
+        "engineering/engineering-backend-architect.md",
+        "engineering/engineering-technical-writer.md",
+        "game-development/game-designer.md",
+        "testing/testing-test-automation-engineer.md",
+        "strategy/coordination/handoff-templates.md",
+        "engineering/engineering-multi-agent-systems-architect.md"
+      ],
+      "note": "Selected guidance rewritten into optional references. License text unchanged; hash uses LF-normalized UTF-8. Existing approval/model boundaries retained."
+    }
   },
   {
     "repository": "TorpedoD/claude-council",

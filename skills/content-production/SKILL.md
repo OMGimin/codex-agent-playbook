@@ -7,6 +7,8 @@ description: Produce and edit blog articles, reports, explainers, and scripts fr
 
 Infer purpose, readers, format, tone, language, and approximate depth from the request and existing samples. Ask only for consequential missing requirements under AGENTS.md. Use an available voice or artifact-format skill when it materially fits; do not force a document workflow on a short answer.
 
+For developer setup guides, API references, tutorials, or migration notes, read [technical writing](references/technical-writing.md). Skip this reference for ordinary prose.
+
 ## Draft from evidence
 
 For news, technical claims, or other source-dependent material, use `source-backed-research` as needed. If evidence is already supplied and sufficient, reuse it with its date and limitations. User-provided text is not automatically verified fact. Preserve the user's opinions as opinions; do not invent personal experience, quotes, credentials, or completed tests.

@@ -25,7 +25,7 @@ For small changes, a short statement of behavior and verification is enough. For
 
 Do not require all future implementation code in the plan. Specify contracts and examples where ambiguity would cause rework. Mark real unknowns and define how to resolve them; do not invent certainty to fill a template. Avoid task splits made only to meet a fixed time estimate.
 
-For games, separate fun hypotheses from validated behavior. For research and content, define source/date coverage and audience rather than imposing software tests. For apps, include target devices, lifecycle, offline behavior, packaging, and distribution only as relevant.
+For substantial game mechanics, read [game design](references/game-design.md) for rule and playtest templates. For games, separate fun hypotheses from validated behavior. For research and content, define source/date coverage and audience rather than imposing software tests. For apps, include target devices, lifecycle, offline behavior, packaging, and distribution only as relevant.
 
 ## Handoff and scope
 

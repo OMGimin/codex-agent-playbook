@@ -11,6 +11,8 @@ Before implementation in a Git repository, inspect branch and user changes. Pres
 
 Do not add tests merely to mirror implementation or prove a document contains a phrase. For low-risk text/configuration edits, visual assets, or disposable prototypes, choose proportionate inspection, validation, or smoke checks. Explain consequential testing limitations. Explicit project testing requirements cannot be silently waived.
 
+For browser-level user journeys, read [web E2E](references/web-e2e.md) for data isolation, observable outcomes, and failure evidence. This is optional domain guidance, not a requirement to add browser tests.
+
 ## Red, green, refactor
 
 1. Define the observable result independently of the implementation. Read [writing-good-tests.md](writing-good-tests.md) when designing nontrivial tests.

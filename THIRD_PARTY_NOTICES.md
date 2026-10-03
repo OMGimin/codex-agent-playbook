@@ -1,12 +1,12 @@
 # Third-party notices / 외부 자료 고지
 
-이 저장소는 외부 프로젝트 전체를 재배포하지 않습니다. 일부 개발 스킬을 수정해 포함하고, 총괄·역할·의사결정 구성에는 외부 설계 아이디어를 참고했습니다. 아래 고정 커밋은 2026-09-25 라이선스 확인 시점이며, 과거 로컬 설치 버전을 뜻하지 않습니다.
+이 저장소는 외부 프로젝트 전체를 재배포하지 않습니다. 일부 개발 스킬을 수정해 포함하고, 총괄·역할·의사결정 구성에는 외부 설계 아이디어를 참고했습니다. 초기 고정 커밋은 2026-09-25 라이선스 확인 시점이며, 과거 로컬 설치 버전을 뜻하지 않습니다. 2026-10-04 전문 지침 보강에 사용한 Agency Agents 커밋과 파일은 아래에 별도로 기록했습니다.
 
 | 원출처 | 이 저장소의 범위 | 처리 |
 |---|---|---|
 | obra/superpowers | systematic-debugging, test-driven-development, requesting-code-review, verification-before-completion, using-git-worktrees, finishing-a-development-branch와 해당 참조 | 수정·재작성한 파생 스킬. Jesse Vincent의 MIT 저작권 고지 보존 |
 | provencher/codex-skills | work-orchestrator의 조정·위임 설계 참고 | 독립적인 로컬 재작성. 원 저장소나 CLI를 통째로 포함하지 않음. Eric Provencher의 MIT 고지 보존 |
-| msitarzewski/agency-agents | work-orchestrator/references/roles.md의 역할 분리 참고 | 역할을 짧은 지시로 재작성. 원 카탈로그 전체 미포함. AgentLand Contributors의 MIT 고지 보존 |
+| msitarzewski/agency-agents | work-orchestrator, content-production, project-shaping, test-driven-development의 아래 참조 | 선택한 지침·템플릿을 수정·재작성. 원 카탈로그 전체 미포함. 해당 스킬 LICENSE에 AgentLand Contributors의 MIT 고지 보존 |
 | TorpedoD/claude-council | decision-council의 다섯 검토 관점 참고 | 가벼운 선택적 자문 절차로 재작성. 원 CLI·스크립트 미포함. TorpedoD의 MIT 고지 보존 |
 
 새로 작성한 공통 지침, 구성·사용 설명과 예시에는 루트 [LICENSE](LICENSE)가 적용됩니다. 외부에서 가져온 부분의 권리는 각 원저작권자에게 남습니다. 개별 스킬을 복사할 때 그 폴더의 LICENSE도 포함하세요. 관련 원문 고지는 아래에 보존했습니다.
@@ -19,6 +19,20 @@
 - 작업트리 생성 실패의 자동 현위치 전환과 폴더명 기반 소유권 추정 제거.
 - 디버깅 참조 3개를 범용 문서로 축약. 원 프로젝트의 과거 성능 수치와 전용 스크립트 의존성 제거.
 - 선택적 도구 연동은 별도 설치 항목으로 표시. 개인 경로·계정·대화 기록·플러그인 원본 미포함.
+
+## 2026-10-04 Agency Agents 전문 지침 보강
+
+기준 커밋: [d3f71c4bb8922d3eea7576237a870dd59b3cdd52](https://github.com/msitarzewski/agency-agents/tree/d3f71c4bb8922d3eea7576237a870dd59b3cdd52).
+
+| 원본 파일 | 수정·재작성한 파일 |
+|---|---|
+| engineering/engineering-backend-architect.md | skills/work-orchestrator/references/backend.md |
+| engineering/engineering-technical-writer.md | skills/content-production/references/technical-writing.md |
+| game-development/game-designer.md | skills/project-shaping/references/game-design.md |
+| testing/testing-test-automation-engineer.md | skills/test-driven-development/references/web-e2e.md |
+| strategy/coordination/handoff-templates.md, engineering/engineering-multi-agent-systems-architect.md | skills/work-orchestrator/references/task-records.md |
+
+도메인별 계약·명세·증거·인계 기준을 반영했습니다. 특정 스택·모든 작업의 고정 수치·첫 결과 자동 반려·총괄 실행 금지·무응답 승인 옵션은 도입하지 않았습니다. 기존 명시적 승인 조건은 유지합니다. 원문의 제품 운영용 에이전트 설계와 일회성 Codex 위임을 구분했습니다.
 
 ## 보존한 라이선스 전문
 
