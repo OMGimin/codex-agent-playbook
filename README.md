@@ -61,6 +61,18 @@ $work-orchestrator 이 프로젝트의 로그인 오류를 조사하고,
 
 Unity·Figma·브라우저·콘텐츠 플랫폼 도구, `agent-reach` 등 선택적 연동은 포함하지 않습니다. 필요한 경우 별도로 설치하고 그 권한과 라이선스를 확인합니다.
 
+## 필요한 전문 지침만 불러오기
+
+공통 스킬 수는 11개를 유지하며, Agency Agents에서 검토한 내용을 다음 선택형 참조로 보강했습니다.
+
+- [백엔드 계약·데이터 변경](skills/work-orchestrator/references/backend.md)
+- [기술 문서 유형·실행 예시 검증](skills/content-production/references/technical-writing.md)
+- [게임 규칙·플레이테스트](skills/project-shaping/references/game-design.md)
+- [웹 E2E 데이터 격리·실패 증거](skills/test-driven-development/references/web-e2e.md)
+- [작업 인계·부분 실패 복구](skills/work-orchestrator/references/task-records.md)
+
+관련 작업에서만 읽으며, 역할마다 에이전트를 만들지는 않습니다. 고정 성능 목표·특정 아키텍처·반복 승인 절차를 공통 의무로 추가하지 않았습니다. 기존 승인·모델·완료 규칙이 계속 적용됩니다.
+
 ## 모델 프로필과 검증 상태
 
 현재 공개 템플릿은 작성자의 **총괄 GPT-6 Astra / High, 하위 GPT-6 Sol 또는 Luna** 정책을 보존합니다. 이는 사용자 환경의 설정 예시이며 모든 계정이나 제품에서 해당 이름과 호출 방식이 제공된다는 보장이 아닙니다. 지원 여부를 확인하고, 변경하려면 관련 지침을 함께 수정해야 합니다. Markdown 자체는 현재 모델을 전환하지 않습니다.
